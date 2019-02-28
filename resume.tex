@@ -12,7 +12,7 @@
 \moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % character encoding
 %\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
@@ -48,28 +48,27 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2015--2019}{Bachelor}{University of Washington}{Seattle}{}{} % arguments 3 to 6 can be left empty
+\cventry{2015--2019}{Bachelor}{University of Washington}{Seattle}{GPA 3.28}{} % arguments 3 to 6 can be left empty
 
 \section{Experience}
 \cventry{2015--2019}{PLSE}{Seattle}{Undergraduate Researcher}{}{Worked on Cassius and Verdi at freshman. Gained some research experience. \newline{}
 Worked on Astraea, continued working on DDF at sophomore. \newline{}
-Worked on relay at junior/senior. }
+Worked on relay at junior/senior.}
+\cventry{2017}{MSRA}{Beijing}{Summer Intern}{}{Worked on Deep Learning (knowledge distillation) using pytorch and tensorflow.}
 \cventry{2016}{Thoughtworks}{Beijing}{Summer Intern}{}{Worked on DDF.}
-\cventry{2017}{MSRA}{Beijing}{Summer Intern}{}{Worked on knowledge distillation.}
 
 \section{Project}
 \cvitem{tvm}{(C++) Top 20 contributor, working on relay for over 1 year. implement adt, ad, reference, pretty printing, ahead-of-time compiler that compile relay code to C++ code, contributed to type checking, currently working on an partial evaluation pass. }
 \cvitem{happy-tree}{(Haskell) A polytypic decision tree that work on any algebraic data type that can be expressed as True-Sums-Of-Products}
 \cvitem{ordinary}{(Haskell) A small web game to teach programming. used frp, nix, zipper, and ghcjs.}
 \cvitem{PE}{(MetaOcaml) STLC with ref/product/sum with bidirectional type checking, partial evaluation, automatic differentiation, working on compilation to ocaml via staging. a prototype for tvm-relay PE.}
-\cvitem{DDF}{(Haskell) A Higher order Deep Learning Framework for differentiable programming.}
+\cvitem{DDF}{(Haskell) A Higher order Deep Learning Framework for differentiable programming, using final-tagless and templatehaskell.}
 \cvitem{Astraea}{(Coq) Try to bring equality satruation to compcert, a verified c compiler in coq.}
 \cvitem{Prover}{(C++) A automated theorem prover for first order logic that use Gentzen's sequential calculus, and implemented the AST using GADT using template metaprogramming in C++. Also implemented multiple search algorithm in AIMA, and the constrainted satisfication problem solver with arch consistency optimization algorithm.}
-\section{Class Taken}
-\cvlistdoubleitem{PL}{Graduate TCS}
-\cvlistdoubleitem{OS}{Computer Architecture}
-\cvlistdoubleitem{Advanced Computer Architecture}{Deep Learning}
-\cvlistdoubleitem{Database}{System for Machine Learning}
+\section{Coursework}
+\cvlistdoubleitem{Programming Language, Graduate TCS}{OS}
+\cvlistdoubleitem{Advanced Computer Architecture}{Database}
+\cvlistdoubleitem{Deep Learning}{System for Machine Learning}
 
 % Publications from a BibTeX file without multibib
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
