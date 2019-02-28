@@ -1,87 +1,94 @@
-\documentclass[margin,line]{res}
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
-\usepackage{color, url}
 
-\oddsidemargin  -0.5in
-\evensidemargin -0.5in
-\textwidth = 6.0in
-\itemsep   = 0.0in
-\parsep    = 0.0in
+\documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-\newenvironment{list1}{
-  \begin{list}{\ding{113}}{%
-      \setlength{\itemsep}{0in}
-      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
-      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
-      \setlength{\leftmargin}{0in}}}{\end{list}}
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Marisa}{Kirisame}
+\email{jerry96@cs.uw.edu}                               % optional, remove / comment the line if not wanted
+\homepage{www.marisa.moe}                         % optional, remove / comment the line if not wanted
+\social[github]{Marisa Kirisame}                              % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
 
-\name{Marisa Kirisame (lolisa@marisa.moe) \vspace*{.1in}}
+\section{Education}
+\cventry{2015--2019}{Bachelor}{University of Washington}{Seattle}{}{} % arguments 3 to 6 can be left empty
 
-\begin{resume}
+\section{Experience}
+\cventry{2015--2019}{PLSE}{Seattle}{Undergraduate Researcher}{}{Worked on Cassius and Verdi at freshman. Gained some research experience. \newline{}
+Worked on Astraea, continued working on DDF at sophomore. \newline{}
+Worked on relay at junior/senior. }
+\cventry{2016}{Thoughtworks}{Beijing}{Summer Intern}{}{Worked on DDF.}
+\cventry{2017}{MSRA}{Beijing}{Summer Intern}{}{Worked on knowledge distillation.}
 
-\section{\sc Research Interest}
-\textbf{Programming Languages and Artificial Intelligence(including ML)}
-% talk about research interest
+\section{Project}
+\cvitem{tvm}{(C++) Top 20 contributor, working on relay for over 1 year. implement adt, ad, reference, pretty printing, ahead-of-time compiler that compile relay code to C++ code, contributed to type checking, currently working on an partial evaluation pass. }
+\cvitem{happy-tree}{(Haskell) A polytypic decision tree that work on any algebraic data type that can be expressed as True-Sums-Of-Products}
+\cvitem{ordinary}{(Haskell) A small web game to teach programming. used frp, nix, zipper, and ghcjs.}
+\cvitem{PE}{(MetaOcaml) STLC with ref/product/sum with bidirectional type checking, partial evaluation, automatic differentiation, working on compilation to ocaml via staging. a prototype for tvm-relay PE.}
+\cvitem{DDF}{(Haskell) A Higher order Deep Learning Framework for differentiable programming.}
+\cvitem{Astraea}{(Coq) Try to bring equality satruation to compcert, a verified c compiler in coq.}
+\cvitem{Prover}{(C++) A automated theorem prover for first order logic that use Gentzen's sequential calculus, and implemented the AST using GADT using template metaprogramming in C++. Also implemented multiple search algorithm in AIMA, and the constrainted satisfication problem solver with arch consistency optimization algorithm.}
+\section{Class Taken}
+\cvlistdoubleitem{PL}{Graduate TCS}
+\cvlistdoubleitem{OS}{Computer Architecture}
+\cvlistdoubleitem{Advanced Computer Architecture}{Deep Learning}
+\cvlistdoubleitem{Database}{System for Machine Learning}
 
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
 
-\section{\sc objective}
-\textbf{Build real-world Computer Science experience in an industrial internship}
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
-\section{\sc Education}
-\textbf{University of Washington, Seattle WA}, Sophomore, 2016 - present
-
-\section{\sc Industry Experience} Interned at ThoughtWorks, Beijing, 7/2016 - 9/2016. \\ Created \url{https://github.com/ThoughtWorksInc/DeepDarkFantasy}, \\
-A Functional Programming Language for Deep Learning, written in Scala. 
-
-\section{\sc Git/Github}
-\url{https://github.com/MarisaKirisame} \\
-Consistently pushed code/contribute on GitHub
-
-\section{\sc Rust}
-\textbf{Primary reviewer to the Rust Primer book} \\
-Perform 3 front-to-back reviews and fixed over 100 typos and technical errors
-
-\section{\sc C++} 
-\textbf{4 years of experience} \\
-\\
-\url{https://github.com/MarisaKirisame/first_order_logic_prover} \\
-Library for automated theorem proving, \\
-with template metaprogramming to ensure transformation correctness \\
-\\
-\url{https://github.com/MarisaKirisame/reflection} \\
-Template library for compile-time reflection
-
-\section{\sc Coq} 
-\textbf{3 years of experience} \\
-\\
-\url{http://tinyurl.com/h9baq4m} \\
-Synthesis of isomorphisms between data structures using Ltac \\
-\\
-\url{https://github.com/MarisaKirisame/Coq_code/blob/master/Paradox.v} \\
-Demonstrated Girard's Pradox in 10 lines of code (with type-in-type)
-
-\section{\sc Programming Language}
-\textbf{Work in UW PLSE (Programming Languages and Software Engineering)} \\
-\url{http://uwplse.org}
-\\
-\\
-Blog about PL/PLT in \url{https://zhuanlan.zhihu.com/marisa}
-
-\section{\sc ML/AI}
-\textbf{Took course CSE 446 (ML), GPA 3.8} \\
-\\
-Books Studied: \\
-\url{https://github.com/MarisaKirisame/Artificial_Intelligence_A_Modern_Approach} \\
-\url{https://github.com/MarisaKirisame/PAIP} \\
-Reinforcement Learning: An Introduction \\
-Genetic algorithm in search optimization and machine learning \\
-Handbook of practical logic and automated reasoning
-
-\section{\sc Haskell} Reached 2K, rank \#573 on code war, primarily in Haskell
-
-\vspace*{-.2in}
-
-\end{resume}
+\clearpage
 \end{document}
+
+
+%% end of file `template.tex'.
