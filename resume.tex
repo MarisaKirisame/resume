@@ -9,7 +9,7 @@
 \documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv themes
-\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 \nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
@@ -48,6 +48,8 @@
 \makecvtitle
 \vspace{-1.5cm}
 \section{Education}
+\cventry{2020--2020}{Master}{University of Utah}{Salt Lake City}{}{} % arguments 3 to 6 can be left empty
+\cventry{2019--2020}{Master}{University of Washington}{Seattle}{}{} % arguments 3 to 6 can be left empty
 \cventry{2015--2019}{Bachelor}{University of Washington}{Seattle}{}{} % arguments 3 to 6 can be left empty
 
 \section{Experience}
@@ -55,19 +57,18 @@
 Worked on TVM at junior/senior. \newline{}
 Worked on Astraea and DeepDarkFantasy at sophomore. \newline{}
 Worked on Cassius(https://cassius.uwplse.org/) and Verdi(http://verdi.uwplse.org/) at freshman.}
-\cventry{2017}{Microsoft Research Asia}{Beijing}{Summer Intern}{}{Worked on Deep Learning (knowledge distillation) using Pytorch and Tensorflow.}
-\cventry{2016}{Thoughtworks}{Beijing}{Summer Intern}{}{Designed and Worked on DeepDarkFantasy(DDF).}
 
 % Publications from a BibTeX file without multibib
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
 %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+
 \nocite{*}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{publications}                        % 'publications' is the name of a BibTeX file
 
 \section{Projects}
 \cvitem{TVM}{Top 20 contributor. Contributed to the design of Relay, a higher order, differentiable IR. Implemented Algebraic Data Types, Automatic Differentiation, Reference, Pretty Printing, Ahead-Of-Time Compiler, Partial Evaluator, contributed to Type Inference.}
-\cvitem{DDF}{A Higher order Deep Learning Framework in Haskell for differentiable programming, using Final Tagless and Template Haskell. 500 Github stars.}
+\cvitem{DTR}{An algorithm for efficient dynamic checkpointing. Implemented in a Pytorch fork. Currently upstreaming.}
 \cvitem{Happy-Tree}{A polytypic decision tree in Haskell that work on any True-Sums-Of-Products}
 \cvitem{Ordinary}{A small web game to teach programming. Used Functional Reactive Programming, Nix, Zipper, and GHCJS.}
 \cvitem{PE}{Simply Typed Lambda Calculus with reference/product/sum with Bidirectional Type Checking, Partial Evaluation, Automatic Differentiation. Written in MetaOCaml so it can be compiled to OCaml.}
