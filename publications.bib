@@ -1,69 +1,22 @@
-@misc{kirisame2024spinelesstraversallayoutinvalidation,
+@misc{ST,
 	title={Spineless Traversal for Layout Invalidation}, 
-	author={Marisa Kirisame and Tiezhi Wang and Pavel Panchekha},
+	author={Marisa Kirisame, et al},
 	year={2024},
 	eprint={2411.10659},
 	archivePrefix={arXiv},
 	primaryClass={cs.PL},
-	url={https://arxiv.org/abs/2411.10659}, 
 }
 
-@article{10.1145/3563323,
-	author = {Kirisame, Marisa and Shenoy, Pranav and Panchekha, Pavel},
-	title = {Optimal heap limits for reducing browser memory use},
-	year = {2022},
-	issue_date = {October 2022},
-	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
-	volume = {6},
-	number = {OOPSLA2},
-	url = {https://doi.org/10.1145/3563323},
-	doi = {10.1145/3563323},
-	abstract = {Garbage-collected language runtimes carefully tune heap limits to reduce garbage collection time and memory usage. However, there's a trade-off: a lower heap limit reduces memory use but increases garbage collection time. Classic methods for setting heap limits include manually tuned heap limits and multiple-of-live-size rules of thumb, but it is not clear when one rule is better than another or how to compare them.  
-	
-	We address this problem with a new framework where heap limits are set for multiple heaps at once. Our key insight is that every heap limit rule induces a particular allocation of memory across multiple processes, and this allocation can be sub-optimal. We use our framework to derive an optimal "square-root" heap limit rule, which minimizes total memory usage for any amount of total garbage collection time. Paradoxically, the square-root heap limit rule achieves this coordination without communication: it allocates memory optimally across multiple heaps without requiring any communication between those heaps.  
-	
-	To demonstrate that this heap limit rule is effective, we prototype it for V8, the JavaScript runtime used in Google Chrome, Microsoft Edge, and other browsers, as well as in server-side frameworks like node.js and Deno. On real-world web pages, our prototype achieves reductions of approximately 16.0\% of memory usage while keeping garbage collection time constant. On memory-intensive benchmarks, reductions of up to 30.0\% of garbage collection time are possible with no change in total memory usage.},
-	journal = {Proc. ACM Program. Lang.},
-	month = oct,
-	articleno = {160},
-	numpages = {21},
-	keywords = {web browser, memory management, heap limit, garbage collection, JavaScript}
+@inproceedings{MB,
+ 	author = {Marisa Kirisame, et al},
+ 	title = {Optimal heap limits for reducing browser memory use},
+ 	booktitle = {OOPSLA},
+  year = {2022},
 }
 
-@inproceedings{kirisame2021dynamic,
+@inproceedings{DTR,
   title = {Dynamic Tensor Rematerialization},
-  author = {Marisa Kirisame and 
-            Steven Lyubomirsky and 
-            Altan Haan and 
-            Jennifer Brennan and 
-            Mike He and 
-            Jared Roesch and 
-            Tianqi Chen and 
-            Zachary Tatlock},
-  booktitle = {International Conference on Learning Representations},
-  year = {2021},
-  url = {https://openreview.net/forum?id=Vfs_2RnOD0H}
-}
-
-@article{Relay,
-  author    = {Jared Roesch and
-               Steven Lyubomirsky and
-               Marisa Kirisame and
-               Josh Pollock and
-               Logan Weber and
-               Ziheng Jiang and
-               Tianqi Chen and
-               Thierry Moreau and
-               Zachary Tatlock},
-  title     = {Relay: {A} High-Level {IR} for Deep Learning},
-  journal   = {CoRR},
-  volume    = {abs/1904.08368},
-  year      = {2019},
-  url       = {http://arxiv.org/abs/1904.08368},
-  archivePrefix = {arXiv},
-  eprint    = {1904.08368},
-  timestamp = {Fri, 26 Apr 2019 13:18:53 +0200},
-  biburl    = {https://dblp.org/rec/journals/corr/abs-1904-08368.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  author = {Marisa Kiris,me, et al},
+  booktitle = {ICLR  year = {2021},
+},
 }
