@@ -31,31 +31,39 @@
 = Projects
 *Spineless Traversal* 
 
-Implemented an incremental web layout program that beat the SOTA by 3.23#sym.times. 
+Implemented an incremental computation algorithm that beats SOTA web layout by 3.23#sym.times.
+- Novel incremental attribute grammar algorithm that reduces cache misses
+- Staged compilation DSL; compiler in OCaml, output high-performance C++
+- Complex data structure (order maintenance, priority queue)
+- Custom allocator, hand-written assembly, cmov to reduce branch prediction, rdtsc for measurement
 
-Wrote a compiler in OCaml that converts attribute grammar to an incremental program, using a novel incremental attribute grammar evaluation algorithm which accesses much fewer nodes than the SOTA. Implemented a highly efficient order maintenance data structure, which is used by the algorithm. Use a custom hand-written allocator to improve cache locality, and inline assembly with conditional move to reduce branch misprediction. Use the compiler to convert a layout algorithm into an incremental program which is then evaluated against the SOTA.
-
-#cite(<ST>, form:"full")
+Kirisame et al. "Spineless Traversal for Layout Invalidation", submitted to PLDI 2024, at ArXiv.
 
 *MemBalancer* 
 
 Reduced garbage collection time by 30% for V8, the JavaScript engine behind Chrome.
-
-Derived an optimal formula for heap sizing with Calculus and Lagrange Multipliers. Using control theory, implemented a controller that measure garbage collection/allocation speed, smoothed the two signal, and set the heap limit to the optimal value from the formula. Utilize concurrent programming and garbage collection knowledge.
+- Optimal formula for heap sizing with Calculus and Lagrange Multipliers
+- Control theory to smooth input signal and set heap limit to optimal value from the formula
+- Implementation utilizes concurrent programming and garbage collection knowledge
 
 #cite(<MB>, form:"full")
 
 *DTR* 
 
 Enabled PyTorch Neural Networks to be trained using as little as 20% of the original memory budget.
-
-Developed an algorithm for gradient checkpointing for large machine learning model, by evicting tensors to save memory, and recursively recomputing them when needed later. Adopted by Megengine and DELTA. Choose the stalest, largest, cheapest to recompute tensor to evict, and avoid evicting long chain, so the total time overhead is a small fraction even though memory saving is large.
+- Cache system evicts tensors to save memory when OOM; recomputing them back when needed
+- Choose the stalest, largest, cheapest to recompute tensor to evict, and avoid evicting long chain
+- Cache policy saves large memory with small time overhead; in practice closed to optimal policy
+- Work with engineers at Megengine and Oneflow to get it adopted in the industry
 
 #cite(<DTR>, form:"full")
 
 *TVM* 
 
-Top 20 contributor to high performance ML compiler-runtime. Contributed to the design of Relay, a higher order, differentiable IR. Implemented Algebraic Data Types, Automatic Differentiation, Ahead-Of-Time Compiler, Partial Evaluator, and Continuation Passing Style Transform.
+Contributed to the design of Relay, a higher order, differentiable IR. 
+- Top 20 contributor to high performance ML compiler-runtime
+- Implemented Algebraic Data Types, Automatic Differentiation, Ahead-Of-Time Compiler
+- Use Partial Evaluator, and Continuation Passing Style Transform to reduce AD overhead
 
 = Skills
 #skills((
